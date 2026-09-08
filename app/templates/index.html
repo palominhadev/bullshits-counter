@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>🤬 Contador de Palavrões</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <h1 id="title">🤬 Contador de Palavrões</h1>
+    <p class="subtitle">Registre cada xingamento e acompanhe seu total diário</p>
+
+    <!-- Total do dia -->
+    <div class="total-card">
+      <div class="value" id="todayCount">0</div>
+      <div class="label">Palavrões hoje</div>
+      <div class="date" id="todayDate" hidden></div>
+    </div>
+
+    <p class="section-title">➕ Adicionar</p>
+    <div class="grid">
+      <button data-word="Fuck!">💢 Fuck!</button>
+      <button data-word="Porra!">💢 Porra!</button>
+      <button data-word="Merda!">💢 Merda!</button>
+      <button data-word="Caralho!">💢 Caralho!</button>
+      <button data-word="Vai tomar no **">💢 Vai tomar no **</button>
+      <button data-word="Puta que pariu!">💢 Puta que pariu!</button>
+      <button data-word="Filho da puta!">💢 Filho da puta!</button>
+    </div>
+
+    <div id="others-shits">
+      <p class="section-title">📝 Outros</p>
+      <div class="custom-row">
+        <input type="text" id="customInput" placeholder="Digite o palavrão..." maxlength="100">
+        <button class="primary" id="customBtn">Registrar</button>
+      </div>
+    </div>
+    <p class="section-title">🕐 Histórico de hoje</p>
+    <div class="history" id="history"></div>
+
+    <button class="danger reset" id="resetBtn">🗑️ Zerar registros de hoje</button>
+
+    <footer>Dados salvos localmente no seu navegador</footer>
+  </div>
+
+{% endblock%}

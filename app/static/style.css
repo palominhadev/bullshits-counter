@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: #e0e0e0;
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #9a9aa0;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.total-card {
+  background: linear-gradient(135deg, #f39c12, #e74c3c);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+}
+
+.total-card .label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.total-card .value {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.total-card .date {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.25rem;
+}
+
+.section-title {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f39c12;
+  margin: 1rem 0 0.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  background: #233554;
+  color: #fff;
+}
+
+.grid button {
+  background: rgba(243, 156, 18, 0.15);
+  border: 1px solid rgba(243, 156, 18, 0.4);
+}
+
+.grid button:hover {
+  background: rgba(243, 156, 18, 0.3);
+  transform: translateY(-2px);
+}
+
+button.primary {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  border: none;
+}
+
+button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(230, 126, 34, 0.4);
+}
+
+button.danger {
+  background: rgba(231, 76, 60, 0.2);
+  border: 1px solid rgba(231, 76, 60, 0.4);
+}
+
+button.danger:hover {
+  background: rgba(231, 76, 60, 0.35);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.custom-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.custom-row input {
+  flex: 1;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  outline: none;
+}
+
+.custom-row input::placeholder {
+  color: #7a7a85;
+}
+
+.custom-row input:focus {
+  border-color: #f39c12;
+}
+
+.inline {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.inline button {
+  flex: 1;
+}
+
+.history {
+  margin-top: 0.5rem;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.history-item .word {
+  font-weight: 600;
+  color: #fff;
+}
+
+.history-item .time {
+  color: #9a9aa0;
+  font-size: 0.85rem;
+}
+
+.empty {
+  text-align: center;
+  color: #7a7a85;
+  padding: 1rem 0;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background: #27ae60;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease;
+  z-index: 100;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+.reset {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+footer {
+  text-align: center;
+  color: #7a7a85;
+  font-size: 0.8rem;
+  margin-top: 1.25rem;
+}
+
+/* "Outros" custom input: desktop only */
+@media (max-width: 768px) {
+  #others-shits {
+    display: none;
+  }
+
+  /* Title font size on mobile */
+  #title {
+    font-size: 1.3rem;
+  }
+}
